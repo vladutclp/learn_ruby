@@ -1,4 +1,3 @@
-#write your code here
 def is_a_vowel(character)
 	vowels = ['a', 'e', 'i', 'o', 'u']
 
@@ -16,23 +15,23 @@ end
 
 
 def latin_pig(vorba)
-	#if vorba[0] == "q" and vorba[1] == "u"
-	#	vorba << "qu"
-	#	vorba = vorba[2..-1]
+	if vorba[0] == "q" and vorba[1] == "u"
+		vorba << "qu"
+		vorba = vorba[1..-1]
+	end
 
-	#end
 	if is_a_vowel(vorba[0])
 		vorba << "ay"
 	else
 		vorba.each_char do |c|
-			if !is_a_vowel(c) or c == "u"
+			if !is_a_vowel(c)
 				vorba = vorba << c
 				vorba = vorba[1..-1]
-				#puts "L-am sters pe #{c}" 
+				puts "L-am sters pe #{c}" 
 			else
-				#puts "am intrat"
+				puts "am intrat"
 				return vorba << "ay"
-				#puts "am iesit"
+				puts "am iesit"
 			end
 		end
 	end
@@ -57,3 +56,6 @@ end
 
 
 
+cuvant = "barman"
+
+puts cuvant[1..-1]
